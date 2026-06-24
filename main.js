@@ -19,18 +19,20 @@ const ppro = require("premierepro");
 async function populateProjectInfo() {
   // Get the active project.
   const project = await ppro.Project.getActiveProject();
-  if (!project) {
-    log("There is no active project found", "red");
-  } else {
-    log(`Active project: ${project.name}`);
-    // Get the active sequence.
-    const sequence = await project.getActiveSequence();
-    if (!sequence) {
-      log("There is no active sequence found", "red");
-    } else {
-      log(`Active sequence: ${sequence.name}`);
-    }
-  }
+  if (!project) { log("There is no active project found", "red"); return; }
+  log(`Active project: ${project.name}`);
+
+  // Get the active sequence.
+  const sequence = await project.getActiveSequence();
+  if (!sequence) { log("There is no active sequence found", "red"); return; }
+  log(`Active sequence: ${sequence.name}`);
+
+  const track = await sequence.getVideoTrack(0)
+  if (!track) { log("No track"); return; }
+  log(`getVideoTrack(0)=${track.name}`);
+
+  // track.getTrackItems(0, 1)
+
 }
 
 // Event listener for the Populate Application Info button.
