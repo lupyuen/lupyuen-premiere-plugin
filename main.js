@@ -36,10 +36,10 @@ async function populateProjectInfo() {
   const trackItems = track.getTrackItems(1, false)
   const trackItem = trackItems[0];
   const trackItemName = await trackItem.getName()
-  log(JSON.stringify({ trackItemName }));
+  log({ trackItemName });
 
   const speed = await trackItem.getSpeed()
-  log(JSON.stringify({ speed }));
+  log({ speed });
 }
 
 // Event listener for the Populate Application Info button.
@@ -54,6 +54,7 @@ document.querySelector("#clear-btn").addEventListener("click", () => {
 
 // Log function to display messages in the plugin body.
 function log(msg, color) {
+  if (typeof(msg) != "string") { msg = JSON.stringify(msg); }
   document.getElementById("plugin-body").innerHTML += color
     ? `<span style='color:${color}'>${msg}</span><br />`
     : `${msg}<br />`;
