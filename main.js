@@ -34,7 +34,8 @@ async function populateProjectInfo() {
   // trackItemType This values can be Empty (0), Clip (1), Transition (2), Preview (3) or Feedback (4)
   // includeEmptyTrackItems
   const trackItems = track.getTrackItems(1, false)
-  const trackItemName = await trackItems[0].getName()
+  const trackItem = trackItems[0];
+  const trackItemName = await trackItem.getName()
   log(`trackItemName=${trackItemName}`);
 }
 
