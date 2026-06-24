@@ -10,3 +10,7 @@ Make sure Premiere Pro is up and running first. First, add the plugin to the "De
 - Otherwise, click "Add Plugin" and select the `manifest.json` file in the corresponding plugin folder.
 
 Click "Load" in the corresponding workspace entry. Switch over to Premiere Pro, and the plugin's panel will be showing. Also find it in the Window > UXP Plugins menu.
+
+## Docs
+
+- Premiere DOM API: https://github.com/adobe/premierepro-types
