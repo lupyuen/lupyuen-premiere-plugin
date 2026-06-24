@@ -13,4 +13,4 @@ Click "Load" in the corresponding workspace entry. Switch over to Premiere Pro, 
 
 ## Docs
 
-- Premiere DOM API: https://github.com/adobe/premierepro-types
+- Premiere DOM API: https://github.com/adobe/premierepro-types/blob/main/src/premierepro.d.ts
