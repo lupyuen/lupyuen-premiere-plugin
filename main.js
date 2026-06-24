@@ -36,7 +36,10 @@ async function populateProjectInfo() {
   const trackItems = track.getTrackItems(1, false)
   const trackItem = trackItems[0];
   const trackItemName = await trackItem.getName()
-  log(`trackItemName=${trackItemName}`);
+  log(JSON.stringify({ trackItemName }));
+
+  const speed = await trackItem.getSpeed()
+  log(JSON.stringify({ speed }));
 }
 
 // Event listener for the Populate Application Info button.
