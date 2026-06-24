@@ -31,8 +31,11 @@ async function populateProjectInfo() {
   if (!track) { log("No track"); return; }
   log(`getVideoTrack(0)=${track.name}`);
 
-  // track.getTrackItems(0, 1)
-
+  // trackItemType This values can be Empty (0), Clip (1), Transition (2), Preview (3) or Feedback (4)
+  // includeEmptyTrackItems
+  const trackItems = track.getTrackItems(1, false)
+  const trackItemName = await trackItems[0].getName()
+  log(`trackItemName=${trackItemName}`);
 }
 
 // Event listener for the Populate Application Info button.
